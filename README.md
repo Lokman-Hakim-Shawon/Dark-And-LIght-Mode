@@ -26,5 +26,17 @@ export default {
 }
 
 ```
+Then you write a simple button sothat when you click the button then the dark mode will open.
 
+```javascript
+const Homepage=()=>{
+    return(
+        <>
+        <button className="border border-black p-5 dark:text-white dark:border-white bg-green-500 ont-bold">
+        Dark Mode
+        </button>
+        </>
+    )
+}
+```
 
