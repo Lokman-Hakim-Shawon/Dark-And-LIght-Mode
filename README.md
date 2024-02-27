@@ -39,4 +39,54 @@ const Homepage=()=>{
     )
 }
 ```
+Then you need to use useState() and useEffect(). set class data in localStorage() for show mode in root class after reloading. 
 
+```javascript
+const Homepage=()=>{
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme]);
+    return(
+        <>
+        <button className="border border-black p-5 dark:text-white dark:border-white bg-green-500 ont-bold">
+        Dark Mode
+        </button>
+        </>
+    )
+}
+export default Homepage;
+```
+Then you create a function for button handling.
+
+```javascript
+const Homepage=()=>{
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme]);
+
+    const handleMode = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
+    return(
+        <>
+        <button onClick={handleMode} className="border border-black p-5 dark:text-white dark:border-white bg-green-500 ont-bold">
+        Dark Mode
+        </button>
+        </>
+    )
+}
+export default Homepage;
