@@ -10,5 +10,21 @@ const Homepage=()=>{
 }
 export default Homepage;
 ```
-then you have to go to tailwind.config.js 
+then you have to go to tailwind.config.js and write darkMode class .
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode:"class",
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+```
+
 
