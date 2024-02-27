@@ -9,5 +9,6 @@ const Homepage=()=>{
     )
 }
 export default Homepage;
+```
 then you have to go to tailwind.config.js 
 
